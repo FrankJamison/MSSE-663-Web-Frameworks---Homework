@@ -1,0 +1,29 @@
+<app-header 
+  [title]="title" 
+  [subTitle]="subTitle" 
+  [isAuth]="isAuth"
+></app-header>
+
+<!-- body -->
+<main>
+<div class="container characters">
+        <div *ngFor="let character of artificers" class="class">
+    <p>
+        Name: {{ character.name }}<br>
+        Race: {{ character.race }}<br>
+        Class: {{ character.class }}<br>
+        Build: {{ character.build }}
+    </p>
+</div>
+
+<div *ngFor="let character of barbarians" class="class">
+    <p>
+        Name: {{ character.name }}<br>
+        Race: {{ character.race }}<br>
+        Class: {{ character.class }}<br>
+        Build: {{ character.build }}
+    </p>
+</div>
+</div>
+</main>
+<!-- body end-->
