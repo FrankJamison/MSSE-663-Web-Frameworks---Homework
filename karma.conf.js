@@ -28,8 +28,12 @@ module.exports = function (config) {
     browsers: ['Chrome'],
     singleRun: false,
     restartOnFileChange: true,
-    customLaunchers: { ChromeHeadless: { base: 'Chrome', flags: [ '--headless', '--disable-gpu', // Without a remote debugging port, Google Chrome exits immediately.
-
+    customLaunchers: { 
+      ChromeHeadless: { 
+        base: 'Chrome', 
+        flags: [ '--headless', '--disable-gpu' ] // Without a remote debugging port, Google Chrome exits immediately.
+      }
+    }
 
   });
   
