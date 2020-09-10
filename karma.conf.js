@@ -27,6 +27,10 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    customLaunchers: { ChromeHeadless: { base: 'Chrome', flags: [ '--headless', '--disable-gpu', // Without a remote debugging port, Google Chrome exits immediately.
+
+
   });
+  
 };
