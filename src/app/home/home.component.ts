@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  title = 'AncientWhiteArmyVet\'s RPG Tools Website';
-  subTitle = 'D&D 5E Pre-Generated Characters';
   isAuth: boolean;
 
   artificers = [{
@@ -20,19 +18,19 @@ export class HomeComponent implements OnInit {
     race: 'Human',
     class: 'Artificer',
     build: 'Armorer (UA)'
-   }, {
+  }, {
     name: 'Fenphina d\'Sivis',
     race: 'Gnome: Mark of Scribing',
     class: 'Artificer',
     build: 'Artillerist'
-   }, {
+  }, {
     name: 'Kars\'ten Gi\'parakk',
     race: 'Gith: Githyanki',
     class: 'Artificer',
     build: 'Battle Smith'
-   }];
+  }];
 
-   barbarians = [{
+  barbarians = [{
     name: 'Vamana Firehammer',
     race: 'Dwarf: Gray (Duergar)',
     class: 'Barbarian',

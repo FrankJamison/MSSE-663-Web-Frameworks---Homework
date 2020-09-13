@@ -6,9 +6,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() title: string;
-  @Input() subTitle: string;
   @Input() isAuth: boolean;
+
+  title = 'AncientWhiteArmyVet\'s RPG Tools Website';
+  subTitle = 'D&D 5E Pre-Generated Characters';
+  
 
   constructor() { }
 

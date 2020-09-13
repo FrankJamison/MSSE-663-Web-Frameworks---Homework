@@ -7,7 +7,7 @@ describe('HeaderComponent', () => {
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
+    TestBed.configureTestingModule({
       declarations: [ HeaderComponent ]
     })
     .compileComponents();
@@ -19,13 +19,12 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have a title', () => {
+    expect(component.title).toBe('AncientWhiteArmyVet\'s RPG Tools Website');
   });
 
-  it(`should have as title 'homework'`, () => {
-    const fixture = TestBed.createComponent(HeaderComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('AncientWhiteArmyVet\'s RPG Tools Website');
+  it('should have a subTitle', () => {
+    expect(component.subTitle).toBe('D&D 5E Pre-Generated Characters');
   });
+  
 });
