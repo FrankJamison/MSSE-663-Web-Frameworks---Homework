@@ -7,7 +7,7 @@ describe('HeaderComponent', () => {
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
+    await TestBed.configureTestingModule({
       declarations: [ HeaderComponent ]
     })
     .compileComponents();
@@ -19,6 +19,10 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
   it('should have a title', () => {
     expect(component.title).toBe('AncientWhiteArmyVet\'s RPG Tools Website');
   });
@@ -26,5 +30,4 @@ describe('HeaderComponent', () => {
   it('should have a subTitle', () => {
     expect(component.subTitle).toBe('D&D 5E Pre-Generated Characters');
   });
-  
 });

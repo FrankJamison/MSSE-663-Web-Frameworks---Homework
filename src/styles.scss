@@ -1,3 +1,5 @@
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 @import url("https://fonts.googleapis.com/css?family=Cinzel|Cinzel+Decorative");
 
 /* You can add global styles to this file, and also import other style files */
@@ -324,6 +326,13 @@ input[type=button] {
 
 /* COMMON.CSS */
 
+// Scaffolding
+.container-width-full {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 html,
 body {
     font-family: "Cinzel Decorative", "Palatino Light", Times, Times New Roman, Georgia, serif;
@@ -476,54 +485,6 @@ select {
     background-image: -webkit-linear-gradient(top, #b93a27, #9e1e0b);
 }
 
-/* HEADER.CSS */
-
-header {
-    padding: 1em;
-    position: fixed;
-    width: 100%;
-    padding: 0;
-    z-index: 10;
-}
-
-.header-content {
-    position: relative;
-    width: 100%;
-    background: linear-gradient(rgba(34, 34, 34, 0.95), rgba(34, 34, 34, 0.75));
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    z-index: 10;
-    height: 55px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.header-content ul {
-    display: flex;
-    justify-content: space-between;
-}
-
-.authorization {
-    margin-left: 15px;
-}
-
-.site-title {
-    color: #bdbdbd;
-    font-size: 18px;
-    margin-left: 15px;
-    width: 100%;
-}
-
-.site-title:hover {
-    color: #fff;
-}
-
-.divider-rule.header {
-    background: url(assets/images/divider-sprite.png) repeat-x 50% 0;
-    top: 0
-}
-
-/* MENU.CSS */
-
 /* MAIN.CSS */
 main {
     padding: 1em 1em 5em;
@@ -534,92 +495,106 @@ main {
     box-sizing: border-box;
     height: 100%;
     padding-top: 100px;
+    background-size: cover;
+    /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
 }
-
-main.index {
+  
+  main.index {
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.05)), url(assets/images/Dragonic.jpg);
     box-shadow: inset 0 -10px 70px rgba(0, 0, 0, 0.75);
     background-position: center;
     display: flex;
     flex-direction: column;
-}
-
-main.index p {
+  }
+  
+  main.index p {
     width: 80%;
     margin: 0 auto 1rem;
-}
-
-.container {
+  }
+  
+  .container {
     width: 80%;
     margin: 0 auto;
     padding: 25px;
-}
-
-.container.characters {
+  }
+  
+  .container.characters {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding-bottom: 100px;
-}
-
-.container .info {
+  }
+  
+  .container .info {
     width: 80%;
     margin: 0 auto;
-}
-
-.features-item {
+  }
+  
+  .features-item {
     padding: 0 50px;
-}
-
-.auth-container {
+  }
+  
+  .auth-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 25px;
-}
-
-.auth {
+  }
+  
+  .auth {
     padding: 50px;
-}
-
-.auth label {
+  }
+  
+  .auth label {
     display: none;
-}
-
-.section-image {
+  }
+  
+  .section-image {
     text-align: center;
-}
-
-.section-image img {
+  }
+  
+  .section-image img {
     width: 8em;
-}
-
-#race-selector,
-#calc-stats-button,
-#calc-abilities-button {
+  }
+  
+  #race-selector,
+  #calc-stats-button,
+  #calc-abilities-button {
     text-align: center;
     margin: 0 auto;
     padding: 10px;
-}
-
-#calc-stats,
-#calc-abilities {
+  }
+  
+  #calc-stats,
+  #calc-abilities {
     width: 300px;
     padding: 5px;
     margin: 10px;
-}
-
-.calculated-stats,
-.calculated-abilities {
+  }
+  
+  .calculated-stats,
+  .calculated-abilities {
     display: flex;
     justify-content: center;
-}
-
-@media screen and (max-width: 60em) {
-
+  }
+  
+    @media (min-width: 1200px) {
+      .container {
+          max-width: 100%;
+      }
+    }
+    
+    @media screen and (max-width: 60em) {
+  
     .auth-container,
     .calculated-abilities,
     .calculated-stats {
         flex-direction: column;
     }
-}
+  }
