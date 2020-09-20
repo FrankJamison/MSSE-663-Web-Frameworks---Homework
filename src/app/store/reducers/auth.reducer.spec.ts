@@ -1,14 +1,16 @@
-import { AuthState } from '../auth-state.model';
-import { login } from '../actions/auth.actions';
+import { AuthState } from '../models/auth-state.model';
+import { requestLogin } from '../actions/auth.actions';
 import { AUTH_INITIAL_MOCK_STATE } from '../auth-initial-mock-state';
 import { authReducer } from './auth.reducer';
 
-describe('Settings Reducer', () => {
+describe('Auth Reducer', () => {
   it('should set the isAuth key to true on `login`', () => {
-    const action = login();
+    const action = requestLogin({ username: 'admin', password: 'password' });
     const expected: AuthState = {
       ...AUTH_INITIAL_MOCK_STATE,
+      token: AUTH_INITIAL_MOCK_STATE.token,
       isAuth: true,
+      loading: true,
     };
     const actual = authReducer(AUTH_INITIAL_MOCK_STATE, action);
 

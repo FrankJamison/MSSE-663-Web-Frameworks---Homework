@@ -1,19 +1,4 @@
-
-<!-- body -->
-<!-- <main>
-  <div class="container characters">
-    <div *ngFor="let hero of heroes" class="class">
-      <p class="character">
-          Name: {{ hero.name }}<br>
-          Race: {{ hero.race }}<br>
-          Class: {{ hero.class }}<br>
-          Build: {{ hero.build }}
-      </p>
-    </div>
-  </div>
-</main> -->
-<!-- body end-->
-
+<!--- body -->
 <main>
   <div class="container">
     <h1>D&amp;D 5E Pre-Generated Characters</h1>
@@ -75,7 +60,7 @@
 
     <div id="characters">
       <ul id="characters-list" class="characters">
-        <li *ngFor="let hero of heroes" class="character-item" style="display: block;">
+        <li *ngFor="let hero of heroes$ | async" class="character-item" style="display: block;">
           <div class="character-card">
             <div class="character-image">
               <img src="../../assets/images/characters/{{hero.name}}.jpg" alt="{{hero.name}}">

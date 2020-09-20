@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     CommonModule,
     NgrxModule,
     LoginModule,
@@ -20,7 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [ HttpClientModule ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

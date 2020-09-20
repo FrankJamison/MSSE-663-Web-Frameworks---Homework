@@ -3,7 +3,7 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 import { AppComponent } from './app.component';
 import { MemoizedSelector } from '@ngrx/store';
-import { AuthState } from './store/auth-state.model';
+import { AuthState } from './store/models/auth-state.model';
 import { getIsAuth } from './store';
 
 describe('AppComponent', () => {
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should should return false if the user is not logged in', (done) => {
+  it('should return false if the user is not logged in', (done) => {
     mockGetIsAuthSelector.setResult(false);
     mockStore.refreshState();
     fixture.detectChanges();
