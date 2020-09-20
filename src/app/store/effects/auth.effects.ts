@@ -4,6 +4,9 @@ import {
   requestLogin,
   requestLoginFailure,
   requestLoginSuccess,
+  requestRegistration,
+  requestRegistrationFailure,
+  requestRegistrationSuccess,
 } from '../actions/auth.actions';
 import { AuthService } from '../../services/auth.service';
 import { catchError, map, switchMap } from 'rxjs/operators';
@@ -19,6 +22,18 @@ export class AuthEffects {
         this.authService.login(username, password).pipe(
           map(({ token }: AuthResponse) => requestLoginSuccess({ token })),
           catchError((error) => of(requestLoginFailure({ error })))
+        )
+      )
+    )
+  );
+
+  register$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(requestRegistration),
+      switchMap(({ username, password, email }) =>
+        this.authService.register(username, password, email).pipe(
+          map(({ token }: AuthResponse) => requestRegistrationSuccess()),
+          catchError((error) => of(requestRegistrationFailure()))
         )
       )
     )

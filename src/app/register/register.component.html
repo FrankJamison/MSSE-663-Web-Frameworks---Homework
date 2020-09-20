@@ -2,7 +2,7 @@
 <main>
   <div class="container characters">
     <h1 class="login-header">{{title}}</h1>
-    <form class="login-form" [formGroup]="loginForm">
+    <form class="login-form" [formGroup]="registerForm">
       <div class="form-group">
         <label for="username">Username</label>
         <input
@@ -21,9 +21,18 @@
           formControlName="password"
         />
       </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          class="form-control"
+          type="email"
+          formControlName="email"
+        />
+      </div>
       <div class="auth-button-container container">
-        <button type="submit" class="auth-button button" (click)="submit()">Login</button> &nbsp;
-        <a [routerLink]="['/register']" class="auth-button button">Sign up</a>
+        <button type="submit" class="auth-button button" (click)="submit()">Submit</button> &nbsp;
+        <a [routerLink]="['/login']" class="auth-button button">Cancel</a>
       </div>
       
     </form>

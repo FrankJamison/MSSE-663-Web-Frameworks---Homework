@@ -8,5 +8,6 @@
 <app-home *ngIf="isAuth$ | async; else notIsAuth"></app-home>
 
 <ng-template #notIsAuth>
-    <app-login></app-login>
+    <!-- <app-login></app-login> -->
+    <router-outlet></router-outlet>
 </ng-template>

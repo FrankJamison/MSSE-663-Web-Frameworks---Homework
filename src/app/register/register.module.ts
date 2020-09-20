@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { LoginComponent } from './login.component';
+import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { LandingComponent } from '../landing/landing.component';
 
-const components = [LoginComponent];
+const components = [RegisterComponent];
 
 @NgModule({
   declarations: [...components],
@@ -21,4 +21,4 @@ const components = [LoginComponent];
   exports: [...components],
   
 })
-export class LoginModule {}
+export class RegisterModule {}
