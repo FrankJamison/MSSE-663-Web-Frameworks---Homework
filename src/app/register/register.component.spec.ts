@@ -4,7 +4,7 @@ import { provideMockStore } from '@ngrx/store/testing';
 
 import { RegisterComponent } from './register.component';
 
-describe('LoginComponent', () => {
+describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
 
