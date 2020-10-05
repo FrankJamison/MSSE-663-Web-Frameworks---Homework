@@ -4,21 +4,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login.component';
-import { RegisterComponent } from '../register/register.component';
-import { LandingComponent } from '../landing/landing.component';
 
 const components = [LoginComponent];
 
 @NgModule({
   declarations: [...components],
-  imports: [CommonModule, ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: '', component: LandingComponent },
-      { path: '**', redirectTo: '/' }
-    ])],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   exports: [...components],
-  
 })
 export class LoginModule {}

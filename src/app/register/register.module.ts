@@ -11,14 +11,7 @@ const components = [RegisterComponent];
 
 @NgModule({
   declarations: [...components],
-  imports: [CommonModule, ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: '', component: LandingComponent },
-      { path: '**', redirectTo: '/' }
-    ])],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   exports: [...components],
-  
 })
 export class RegisterModule {}

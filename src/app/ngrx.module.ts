@@ -4,7 +4,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { appState, AuthEffects } from './store';
-import { HeroesEffects } from './hero-table/store';
+import { HeroesEffects } from './hero-list/store';
 
 @NgModule({
   declarations: [],

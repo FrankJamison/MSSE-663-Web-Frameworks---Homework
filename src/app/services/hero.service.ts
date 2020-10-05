@@ -24,8 +24,10 @@ export class HeroesService {
     });
   }
 
-  getHero(heroId: number): Observable<HeroResponse[]> {
-    return this.http.get<HeroResponse[]>(`${HEROES_URL}/${heroId}`);
+  getHero(heroId: string, token: string): Observable<HeroResponse> {
+    return this.http.get<HeroResponse>(`${HEROES_URL}/${heroId}`, {
+      headers: header(token),
+    });
   }
 
   createHero(name, specialty, ranking, rent): Observable<HeroResponse> {
