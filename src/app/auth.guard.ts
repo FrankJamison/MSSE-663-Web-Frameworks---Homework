@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate {
     return this.store.select(getIsAuth).pipe(
       tap((isAuth: boolean) => {
         if (!isAuth) {
-          this.router.navigate(['']);
+          this.router.navigate(['login']);
         }
       }),
       filter((isAuth: boolean) => isAuth),

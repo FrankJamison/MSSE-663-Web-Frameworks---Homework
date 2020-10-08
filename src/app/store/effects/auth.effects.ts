@@ -4,14 +4,12 @@ import {
   requestLogin,
   requestLoginFailure,
   requestLoginSuccess,
-  requestRegistration,
-  requestRegistrationFailure,
-  requestRegistrationSuccess,
 } from '../actions/auth.actions';
 import { AuthService } from '../../services/auth.service';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { AuthResponse } from '../../services/user-response.model';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class AuthEffects {
@@ -27,17 +25,22 @@ export class AuthEffects {
     )
   );
 
-  register$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(requestRegistration),
-      switchMap(({ username, password, email }) =>
-        this.authService.register(username, password, email).pipe(
-          map(({ token }: AuthResponse) => requestRegistrationSuccess()),
-          catchError((error) => of(requestRegistrationFailure()))
-        )
-      )
-    )
+  // side effect
+  loginSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(requestLoginSuccess),
+        tap(({ token }) => {
+          localStorage.setItem('token', token);
+          this.router.navigateByUrl('/');
+        })
+      ),
+    { dispatch: false }
   );
 
-  constructor(private actions$: Actions, private authService: AuthService) {}
+  constructor(
+    private actions$: Actions,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 }

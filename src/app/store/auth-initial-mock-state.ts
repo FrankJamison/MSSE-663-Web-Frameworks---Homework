@@ -2,7 +2,6 @@ import { AuthState } from './models/auth-state.model';
 
 export const AUTH_INITIAL_MOCK_STATE: AuthState = {
   isAuth: true,
-  token: 'token',
   isTokenExpired: false,
   loading: false,
 };

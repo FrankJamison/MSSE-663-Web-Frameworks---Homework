@@ -17,4 +17,8 @@ describe('HomeComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
+  // it('should display a budget', () => {
+  //   expect(component.budget).toBe(10000);
+  // });
 });

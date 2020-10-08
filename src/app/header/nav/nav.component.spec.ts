@@ -26,7 +26,7 @@ describe('NavComponent', () => {
   });
 
   it('should have a title', () => {
-    expect(component.title).toBe('Rent a Hero');
+    expect(component.title).toBe('AncientWhiteArmyVet\'s RPG Tools Website');
   });
 
   it('should display an array of links', () => {

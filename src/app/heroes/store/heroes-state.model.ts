@@ -1,4 +1,5 @@
 import { Hero } from '../models/hero.model';
+import { HeroState } from './hero-state.model';
 
 export interface HeroesState {
   readonly heroes: Hero[];
