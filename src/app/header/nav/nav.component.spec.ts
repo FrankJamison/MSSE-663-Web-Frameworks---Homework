@@ -31,6 +31,7 @@ describe('NavComponent', () => {
 
   it('should display an array of links', () => {
     const links = [
+      { title: 'Home', fragment: '/' },
       { title: 'Heroes', fragment: '/heroes' },
       { title: 'Login', fragment: '/login' },
     ];

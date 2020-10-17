@@ -1,7 +1,7 @@
 <header>
     <div class="header-content">
         <div class="site-title vertical-center">
-            <app-nav></app-nav>
+            <app-nav [isAuth]="isAuth$ | async"></app-nav>
         </div> 
     </div>
     <div class="divider header-divider">

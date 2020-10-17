@@ -62,7 +62,7 @@
 
     <div id="characters">
       <ul id="characters-list" class="characters">
-        <li *ngFor="let hero of heroes; let id = index" class="character-item" style="display: block;">
+        <li *ngFor="let hero of heroes; let id = index" class="character-item {{hero.class}}" style="display: block;">
           <div class="character-card">
             <div class="character-image">
               <img src="../../assets/images/characters/{{hero.name}}.jpg" alt="{{hero.name}}">
